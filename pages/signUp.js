@@ -51,12 +51,12 @@ export default function SignUp() {
                   />
                   <input
                     className="focus:outline-none border w-full p-3"
-                    type="text"
+                    type="password"
                     placeholder="Set a password"
                   />
                   <input
                     className="focus:outline-none border w-full p-3"
-                    type="text"
+                    type="password"
                     placeholder="Confirm Password"
                   />
                 </div>

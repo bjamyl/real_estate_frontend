@@ -6,11 +6,11 @@ export default function About() {
   return (
     <section className="px-4 my-14 xl:my-32 flex justify-center">
       <div className="  flex-col justify-center space-y-4 items-center xl:w-[1280px]">
-        <h1 className="font-bold text-3xl text-center xl:text-5xl">About Us</h1>
+        <h1 className="font-bold text-3xl text-center xl:text-5xl xl:mb-8">About Us</h1>
         <div className="sm:grid md:grid-cols-2 md:gap-4">
           <div className="border">
             <Image
-              src="/about-image.png"
+              src="/about-image.jpg"
               width={1920}
               height={1080}
               layout="responsive"

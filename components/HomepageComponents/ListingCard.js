@@ -11,6 +11,7 @@ export default function ListingCard({ image, title, price, location }) {
           layout="responsive"
           width={1920}
           height={1080}
+          objectFit='cover'
         />
         <div className="p-2">
           <h2 className="font-bold text-xl">{title}</h2>
