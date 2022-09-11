@@ -33,7 +33,7 @@ export default function SearchBlock() {
                 {/* Region */}
                 <div className="xl:w-1/4 ">
                   <select className="border xl:w-full  w-3/4 p-2" name="" id="">
-                    <option className="font-bold text-lg" selected value="">
+                    <option className="font-bold text-lg" disabled defaultValue=''>
                       Region
                     </option>
                     {regions.map((region) => (
@@ -46,7 +46,7 @@ export default function SearchBlock() {
                 {/* Bedrooms */}
                 <div className="xl:w-1/4 ">
                   <select className="border xl:w-full  w-3/4 p-2" name="" id="">
-                    <option className="font-bold text-lg" selected value="">
+                    <option className="font-bold text-lg" disabled value="">
                       Bedrooms
                     </option>
                     {bedrooms.map((bedroom) => (
@@ -59,7 +59,7 @@ export default function SearchBlock() {
                 {/* Max price */}
                 <div className="xl:w-1/4 ">
                   <select className="border xl:w-full w-3/4  p-2" name="" id="">
-                    <option className="font-bold text-lg" selected value="">
+                    <option className="font-bold text-lg" disabled value="">
                       Max Price
                     </option>
                     {max_price.map((price) => (

@@ -31,7 +31,7 @@ export const listingsData = [
     id: 5,
     title: "Magnificent duplex in a private villa",
     price: "$520,000",
-    location: "West Legon",
+    location: "Ayeduase",
     image: "/image-5.jpg",
   },
   {
@@ -45,12 +45,12 @@ export const listingsData = [
     id: 7,
     title: "5i large design apartment with terrace",
     price: "$320,000",
-    location: "West Legon",
+    location: "Amakom",
     image: "/image-7.jpg",
   },
   {
     id: 8,
-    title: "6 bedroom-house at Limanyiri",
+    title: "6 bedroom-house at Jahan",
     price: "$320,000",
     location: "Jahan Residential Area",
     image: "/image-8.jpg",
