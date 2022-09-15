@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Realtors from "./Realtors";
 
-export default function AboutPageComponent() {
+export default function AboutPageComponent({realtors}) {
   return (
     <section className="mt-28 xl:flex xl:justify-center">
       <div className="mx-4 xl:w-[1290px]">
@@ -49,7 +49,7 @@ export default function AboutPageComponent() {
         </div>
         {/* last section */}
         <div>
-          <Realtors />
+          <Realtors realtors={realtors} />
         </div>
       </div>
     </section>

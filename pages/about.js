@@ -1,12 +1,20 @@
 import Layout from "../components/Layout/Layout";
 import AboutPageComponent from "../components/AboutPageComponents/AboutPageMain";
 
-export default function About() {
+export default function About({realtors}) {
   return (
-    <Layout title='Real Estate | About Us - We are a company dedicated to finding you the perfect home'>
+    <Layout title="Real Estate | About Us - We are a company dedicated to finding you the perfect home">
       <div className="">
-        <AboutPageComponent/>
+        <AboutPageComponent realtors={realtors} />
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch("http://127.0.0.1:8000/api/realtors");
+  const realtors = await res.json();
+  console.log(realtors);
+
+  return { props: { realtors } };
 }

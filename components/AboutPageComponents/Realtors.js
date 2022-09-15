@@ -1,13 +1,14 @@
 import Image from "next/image";
 import React from "react";
 
-const realtors = [
-  { id: 2, name: "Rashad Tate", image: "/john_carter.png" },
-  { id: 1, name: "James Brown", image: "/michael_scott.png" },
-  { id: 1, name: "Jane Asante", image: "/emily_brown.png" },
-];
+// const realtors = [
+//   { id: 2, name: "Rashad Tate", image: "/john_carter.png" },
+//   { id: 1, name: "James Brown", image: "/michael_scott.png" },
+//   { id: 1, name: "Jane Asante", image: "/emily_brown.png" },
+// ];
 
-export default function Realtors() {
+export default function Realtors({ realtors }) {
+  const orig = "http://localhost:8000";
   return (
     <section>
       <div>
@@ -17,7 +18,7 @@ export default function Realtors() {
             <div className="" key={realtor.id}>
               <Image
                 className=""
-                src={realtor.image}
+                src={orig+realtor.photo}
                 width={1080}
                 height={1920}
                 objectFit="cover"
