@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Layout from "../components/Layout/Layout";
 import Link from "next/link";
@@ -10,6 +11,8 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+
+  const router = useRouter()
 
   const handleSubmit = async (e) => {
     console.log("submitted");
@@ -26,8 +29,8 @@ export default function SignUp() {
       return;
     }
 
-    if(password != password2){
-      alert('Passwords must match')
+    if (password != password2) {
+      alert("Passwords must match");
     }
 
     const form_data = {
@@ -49,10 +52,12 @@ export default function SignUp() {
     });
 
     const data = await res.json();
-    console.log(res)
+    console.log(res);
     if (res.ok) {
       alert("Success");
     }
+
+    router.push('/signIn')
 
     setFirstName("");
     setLastName("");
@@ -139,7 +144,9 @@ export default function SignUp() {
                   </button>
                   <p className="text-sm text-center">
                     Already have an account?{" "}
-                    <Link href="/signIn"> Sign In </Link>
+                    <span className="text-sky-500">
+                      <Link href="/signIn"> Sign In </Link>
+                    </span>
                     instead
                   </p>
                 </div>
