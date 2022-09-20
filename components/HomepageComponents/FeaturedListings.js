@@ -18,7 +18,7 @@ export default function FeaturedListings({ listings }) {
             Show All Listings
           </button>
         </Link>
-        <div className="space-y-8 sm:grid md:gap-6 md:grid-cols-2 md:space-y-0 xl:grid-cols-3 xl:gap-8">
+        <div className="grid gap-6 md:gap-6 md:grid-cols-2 md:space-y-0 xl:grid-cols-3 xl:gap-8">
           {newListings.map((listing) => (
             <Link href={`/listings/${listing.id}`} key={listing.id}>
               <a href="">

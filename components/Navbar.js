@@ -1,11 +1,16 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useContext } from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
 import Link from "next/link";
 import AuthContext from "../context/AuthContext";
+import { useState } from "react";
+import Menu from "./Menu";
 
 export default function Navbar() {
   let { user, logoutUser } = useContext(AuthContext);
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <nav className="p-4 xl:px-24 fixed top-0 w-screen bg-white z-40">
       <div className="flex items-center justify-between">
@@ -51,16 +56,26 @@ export default function Navbar() {
           </div>
         </div>
         <div className="xl:hidden">
-          <HiMenuAlt4 size={50} />
+          {showMenu ? (
+            <HiX onClick={() => setShowMenu(false)} size={50} />
+          ) : (
+            <HiMenuAlt4 onClick={() => setShowMenu(true)} size={50} />
+          )}
+          {/* <HiMenuAlt4 size={50} /> */}
         </div>
         {/* signIn and signUp */}
         {user ? (
           <div className="hidden xl:flex xl:space-x-8">
             {/* {username and logout button} */}
             <p className="text-xl font-bold px-8 py-2">Hi, {user.first_name}</p>
-            <button onClick={logoutUser} className="text-white bg-[#150F0A] px-8 py-2 text-lg">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={logoutUser}
+              className="text-white bg-[#150F0A] px-8 py-2 text-lg"
+            >
               Log out
-            </button>
+            </motion.button>
           </div>
         ) : (
           <div className="hidden xl:block xl:space-x-8">
@@ -68,13 +83,18 @@ export default function Navbar() {
               <button className="text-lg px-8 py-2">Sign Up</button>
             </Link>
             <Link href="/signIn">
-              <button className="text-white bg-[#150F0A] px-8 py-2 text-lg">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-white bg-[#150F0A] px-8 py-2 text-lg"
+              >
                 Log In
-              </button>
+              </motion.button>
             </Link>
           </div>
         )}
       </div>
+      {showMenu ? <Menu setShowMenu={setShowMenu} user={user} logoutUser={logoutUser} /> : null}
     </nav>
   );
 }

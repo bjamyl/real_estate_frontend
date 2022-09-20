@@ -1,11 +1,12 @@
 import Image from "next/image";
-import {useContext} from "react";
+import { motion } from "framer-motion";
+import { useContext } from "react";
 import Layout from "../components/Layout/Layout";
 import Link from "next/link";
 import AuthContext from "../context/AuthContext";
 
 export default function SignIn() {
-  let {loginUser} = useContext(AuthContext)
+  let { loginUser } = useContext(AuthContext);
   return (
     <Layout title="Real Estate | Create an account">
       <section className="h-screen flex justify-center items-center">
@@ -50,9 +51,14 @@ export default function SignIn() {
                   />
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <button type="submit" className="text-white bg-[#150F0A] px-8 py-2 text-lg">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    type="submit"
+                    className="text-white bg-[#150F0A] px-8 py-2 text-lg"
+                  >
                     Log In
-                  </button>
+                  </motion.button>
                   <p className="text-sm text-center">
                     Do not own an account?{" "}
                     <span className="text-sky-500">
