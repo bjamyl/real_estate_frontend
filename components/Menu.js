@@ -19,14 +19,14 @@ export default function Menu({ user, logoutUser }) {
   };
 
   return (
-    <motion.div
-      variants={dropIn}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className="xl:hidden"
-    >
-      <div className="fixed inset-0 top-20 bg-white">
+    <div className="xl:hidden">
+      <motion.div
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="fixed inset-0 top-20 bg-white"
+      >
         <div className="py-8 px-4 flex flex-col h-full justify-between">
           <div className="">
             <div className="mb-8 flex flex-row justify-between items-center ">
@@ -72,7 +72,7 @@ export default function Menu({ user, logoutUser }) {
             )}
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

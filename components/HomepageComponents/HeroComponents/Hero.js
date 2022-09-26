@@ -36,6 +36,7 @@ export default function Hero() {
         </div>
         <div className="xl:w-2/4">
           <Image
+            priority
             alt="hero-image"
             src="/hero.jpg"
             layout="responsive"

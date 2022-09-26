@@ -6,6 +6,7 @@ import Link from "next/link";
 import AuthContext from "../context/AuthContext";
 import { useState } from "react";
 import Menu from "./Menu";
+import { AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   let { user, logoutUser } = useContext(AuthContext);
@@ -94,7 +95,11 @@ export default function Navbar() {
           </div>
         )}
       </div>
-      {showMenu ? <Menu setShowMenu={setShowMenu} user={user} logoutUser={logoutUser} /> : null}
+      <AnimatePresence>
+        {showMenu ? (
+          <Menu setShowMenu={setShowMenu} user={user} logoutUser={logoutUser} />
+        ) : null}
+      </AnimatePresence>
     </nav>
   );
 }

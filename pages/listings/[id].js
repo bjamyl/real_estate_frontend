@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../../components/Layout/Layout";
-import FeaturesCardOne from "../../components/ListingsPageComponents/SingleListingPageComponents/FeaturesCard";
 import SingleListing from "../../components/ListingsPageComponents/SingleListingPageComponents/SingleListing";
 import Modal from "../../components/Modal";
 import AuthContext from "../../context/AuthContext";
@@ -21,24 +20,26 @@ export default function Listing({ listing }) {
   };
 
   return (
-    <Layout title={`Real Estate | ${listing.title} `}>
+    <Layout title={`Real Estate | ${listing?.title} `}>
       <section className="">
         <div>
-          <SingleListing
-            image={orig + listing.photo_main}
-            bathrooms={listing.bedrooms}
-            garage={listing.garage}
-            price={listing.price}
-            bedrooms={listing.bedrooms}
-            realtor={listing.realtor}
-            lotSize={listing.lot_size}
-            sqft={listing.sqft}
-            description={listing.description}
-            address={listing.address}
-            region={listing.region}
-            city={listing.city}
-            title={listing.title}
-          />
+          {listing && (
+            <SingleListing
+              image={orig + listing.photo_main}
+              bathrooms={listing.bedrooms}
+              garage={listing.garage}
+              price={listing.price}
+              bedrooms={listing.bedrooms}
+              realtor={listing.realtor}
+              lotSize={listing.lot_size}
+              sqft={listing.sqft}
+              description={listing.description}
+              address={listing.address}
+              region={listing.region}
+              city={listing.city}
+              title={listing.title}
+            />
+          )}
         </div>
         <button
           onClick={() => setShowModal(!showModal)}
@@ -46,10 +47,7 @@ export default function Listing({ listing }) {
         >
           Make Enquiry
         </button>
-        <AnimatePresence
-          initial={false}
-          exitBeforeEnter={true}
-        >
+        <AnimatePresence initial={false} exitBeforeEnter={true}>
           <Modal isVisible={showModal} onClose={() => setShowModal(!showModal)}>
             <div>
               <form
@@ -60,7 +58,7 @@ export default function Listing({ listing }) {
                   Make An Enquiry
                 </h1>
                 <div>
-                <label className="xl:text-lg" >Listing Title</label>
+                  <label className="xl:text-lg">Listing Title</label>
                   <input
                     className="border p-2 w-full"
                     disabled
@@ -70,18 +68,19 @@ export default function Listing({ listing }) {
                   />
                 </div>
                 <div>
-                  <label className="xl:text-lg" >Email</label>
+                  <label className="xl:text-lg">Email</label>
                   <input
                     className="border p-2 w-full"
                     placeholder="janedoe@mail.com"
                     name="email"
                     type="email"
+                    // value={user? user.first_name: null}
                   />
                 </div>
                 <div>
-                <label className="xl:text-lg" >Message</label>
+                  <label className="xl:text-lg">Message</label>
                   <textarea
-                    className="w-full border"
+                    className="w-full border p-2"
                     name="message"
                     cols="30"
                     rows="10"
