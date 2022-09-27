@@ -8,7 +8,7 @@ const AuthContext = createContext();
 
 export default AuthContext;
 
-export const AuthProvider = ({ children }, req) => {
+export const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   // Next cookie state declarations
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }, req) => {
       // setAuthCookies(data);
       // localStorage.setItem("authTokens", JSON.stringify(data));
       // Setting Next cookie
-      router.push("/");
+      router.back();
     } else {
       alert("Something went wrong");
     }
@@ -84,7 +84,7 @@ export const AuthProvider = ({ children }, req) => {
     Cookies.remove("access");
     // setAuthCookies(null);
     // localStorage.removeItem("authTokens");
-    router.push("/");
+    router.back();
   };
 
   // Updating token function by sending refresh token to refresh token endpoint

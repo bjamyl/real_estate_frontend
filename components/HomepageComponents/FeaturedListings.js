@@ -26,7 +26,7 @@ export default function FeaturedListings({ listings }) {
                   title={listing.title}
                   price={listing.price}
                   location={listing.address}
-                  image={orig + listing.photo_main}
+                  image={listing.photo_main}
                 />
               </a>
             </Link>

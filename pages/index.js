@@ -5,7 +5,7 @@ import About from '../components/HomepageComponents/About'
 
 export default function Home({listings}) {
   return (
-    <Layout>
+    <Layout title='Real Estate | All Listings'>
       <div className=" items-center justify-center">
         <Hero />
         <FeaturedListings listings={listings}/>

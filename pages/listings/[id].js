@@ -9,13 +9,43 @@ export default function Listing({ listing }) {
   let { user } = useContext(AuthContext);
 
   const [showModal, setShowModal] = useState(false);
+  // Declare form input states
+  const [name, setName] = useState(user ? user.first_name : "");
+  const [email, setEmail] = useState(user ? user.email : "");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const userId = user ? user.user_id : 0;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     alert("Form submitted");
-    // const res = await fetch()
+    const form_data = {
+      listing: listing.title,
+      listing_id: listing.id,
+      name,
+      email,
+      phone,
+      message,
+      user_id: userId,
+    };
+    const res = await fetch("http://127.0.0.1:8000/api/enquiries/send/",{
+      method:"POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(form_data)
+    })
 
-    // const data = await res.json()
+    const data = await res.json()
+    if(res.status === 200){
+      alert("All good")
+    } else{
+      alert("Something went wrong")
+    }
+    setEmail(user ? user.email : "")
+    setName(user ? user.first_name : "")
+    setPhone("")
+    setMessage("")
     setShowModal(!showModal);
   };
 
@@ -25,7 +55,7 @@ export default function Listing({ listing }) {
         <div>
           {listing && (
             <SingleListing
-              image={orig + listing.photo_main}
+              image={listing.photo_main}
               bathrooms={listing.bedrooms}
               garage={listing.garage}
               price={listing.price}
@@ -68,13 +98,46 @@ export default function Listing({ listing }) {
                   />
                 </div>
                 <div>
+                  <label className="xl:text-lg">Name</label>
+                  <input
+                    className="border p-2 w-full"
+                    placeholder={
+                      user
+                        ? user.first_name
+                        : "Please enter your full name(eg:Jane Doe)"
+                    }
+                    name="name"
+                    type="text"
+                    value={name}
+                    disabled={user ? true : false}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div>
                   <label className="xl:text-lg">Email</label>
                   <input
                     className="border p-2 w-full"
-                    placeholder="janedoe@mail.com"
+                    placeholder={
+                      user
+                        ? user.email
+                        : "Please enter your email(eg:janedoe@mail.com)"
+                    }
                     name="email"
                     type="email"
-                    // value={user? user.first_name: null}
+                    value={email}
+                    disabled={user ? true : false}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label className="xl:text-lg">Email</label>
+                  <input
+                    className="border p-2 w-full"
+                    placeholder="Please enter your phone number(eg:222-222-222)"
+                    name="phone"
+                    type="text"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 <div>
@@ -84,6 +147,8 @@ export default function Listing({ listing }) {
                     name="message"
                     cols="30"
                     rows="10"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <motion.button

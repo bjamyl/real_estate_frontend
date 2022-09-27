@@ -3,17 +3,16 @@ import SearchBlock from "../../components/ListingsPageComponents/SearchBlock";
 import Layout from "../../components/Layout/Layout";
 import { listingsData } from "../../components/ListingsPageComponents/listingData";
 import ListingCard from "../../components/HomepageComponents/ListingCard";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import Link from "next/link";
+import SearchContext from "../../context/SearchContext";
 
 export default function Listings({ listings }) {
-  const orig = "http://localhost:8000";
-  console.log(listings);
 
   return (
     <Layout>
       <section className="my-28 xl:mx-8 mx-4">
-        <SearchBlock />
+        <SearchBlock  description='Choose from the most advantageous offers' />
         <div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:space-y-0 xl:grid-cols-3 xl:gap-10">
             {listings.map((listing) => (
@@ -23,7 +22,7 @@ export default function Listings({ listings }) {
                     title={listing.title}
                     price={listing.price}
                     location={listing.address}
-                    image={orig + listing.photo_main}
+                    image={listing.photo_main}
                   />
                 </a>
               </Link>

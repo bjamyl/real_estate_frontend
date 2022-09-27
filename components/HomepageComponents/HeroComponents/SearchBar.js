@@ -1,18 +1,33 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
+import { useContext } from "react";
+import SearchContext from "../../../context/SearchContext";
 export default function SearchBar({ placeholderText }) {
-  const handleSubmit = async () => {
-    const res = await fetch();
-  };
+  let { setSearchItems, listingsSearch, searchItems, searchLocation } =
+    useContext(SearchContext);
+  console.log(searchItems);
+  console.log(listingsSearch)
+
   return (
     <div>
-      <form className="border  xl:w-3/4 flex justify-between" onSubmit={handleSubmit}>
+      <form
+        className="border  xl:w-3/4 flex justify-between"
+        onSubmit={searchLocation}
+      >
         <div className="flex w-full items-center pl-2">
           <MdLocationOn color="#B0BAD5" />
-          <input className="p-2 w-full" placeholder={placeholderText} />
+          <input
+            onChange={(e) => setSearchItems(e.target.value)}
+            value={searchItems}
+            className="p-2 w-full"
+            placeholder={placeholderText}
+          />
         </div>
-        <button className="bg-[#150F0A] text-white px-3 flex items-center gap-2">
+        <button
+          type="submit"
+          className="bg-[#150F0A] text-white px-3 flex items-center gap-2"
+        >
           {" "}
           <AiOutlineSearch /> Search
         </button>
