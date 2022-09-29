@@ -18,7 +18,6 @@ export default function Listing({ listing }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Form submitted");
     const form_data = {
       listing: listing.title,
       listing_id: listing.id,
@@ -38,9 +37,9 @@ export default function Listing({ listing }) {
 
     const data = await res.json()
     if(res.status === 200){
-      alert("All good")
+      console.log("All good")
     } else{
-      alert("Something went wrong")
+      console.log("Something went wrong")
     }
     setEmail(user ? user.email : "")
     setName(user ? user.first_name : "")
@@ -55,7 +54,7 @@ export default function Listing({ listing }) {
         <div>
           {listing && (
             <SingleListing
-              image={listing.photo_main}
+              image={orig+listing.photo_main}
               bathrooms={listing.bedrooms}
               garage={listing.garage}
               price={listing.price}

@@ -1,5 +1,6 @@
 import ListingCard from "./ListingCard";
 import Link from "next/link";
+import { motion } from "framer-motion";
 export default function FeaturedListings({ listings }) {
   const newListings = listings.slice(0, 3);
   const orig = "http://localhost:8000";
@@ -8,13 +9,17 @@ export default function FeaturedListings({ listings }) {
     <section className="mt-14 flex justify-center xl:mt-32 ">
       <div className="mx-4 flex flex-col items-center gap-4 ">
         <h2 className="text-3xl font-bold xl:text-5xl">Featured Listings</h2>
-        <p className="xl:w-2/4 text-center">
+        <motion.p
+          whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+          className="xl:w-2/4 text-center xl:text-lg"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac
           risus in mauris congue pharetra. Morbi tortor nulla, rutrum vitae
           ipsum at, maximus interdum turpis.
-        </p>
+        </motion.p>
         <Link href="/listings">
-          <button className="text-white bg-[#150F0A] px-8 py-2 text-lg">
+          <button className="text-white bg-[#150F0A] px-8 py-2 text-lg hover:scale-110 transition-all duration-700">
             Show All Listings
           </button>
         </Link>

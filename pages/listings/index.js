@@ -10,7 +10,7 @@ import SearchContext from "../../context/SearchContext";
 export default function Listings({ listings }) {
 
   return (
-    <Layout>
+    <Layout title='Real Estate | All Listings'>
       <section className="my-28 xl:mx-8 mx-4">
         <SearchBlock  description='Choose from the most advantageous offers' />
         <div>

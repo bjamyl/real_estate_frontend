@@ -2,7 +2,6 @@ import { useState, createContext, useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
-import { setCookie, getCookie } from "cookies-next";
 
 const AuthContext = createContext();
 
@@ -47,7 +46,6 @@ export const AuthProvider = ({ children }) => {
   //Logging in user function: Takes the username and password and sends that data to the token obtain endpoint
   let loginUser = async (e) => {
     e.preventDefault();
-    alert("Submitted");
     let res = await fetch("http://127.0.0.1:8000/api/token/", {
       method: "POST",
       headers: {
@@ -82,9 +80,9 @@ export const AuthProvider = ({ children }) => {
     setAccess(null);
     Cookies.remove("authTokens");
     Cookies.remove("access");
+    router.push('/')
     // setAuthCookies(null);
     // localStorage.removeItem("authTokens");
-    router.back();
   };
 
   // Updating token function by sending refresh token to refresh token endpoint

@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
 import { useRouter } from "next/router";
 
+
 const SearchContext = createContext();
 
 export default SearchContext;
@@ -21,7 +22,6 @@ export const SearchProvider = ({ children }) => {
   // Searching for a listing based on location from the homepage
   const searchLocation = async (e) => {
     e.preventDefault();
-    alert("submitted");
     setValues({
       keyword: "",
       location: "",
@@ -58,7 +58,6 @@ export const SearchProvider = ({ children }) => {
   // Searching and filtering listing
   const searchFilter = async (e) => {
     e.preventDefault();
-    alert("Submitted");
     setSearchItems("");
     const res = await fetch(
       `http://127.0.0.1:8000/api/listings/?bedrooms=${

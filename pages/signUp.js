@@ -15,7 +15,6 @@ export default function SignUp() {
   const router = useRouter()
 
   const handleSubmit = async (e) => {
-    console.log("submitted");
     e.preventDefault();
     if (
       !firstName ||
@@ -54,7 +53,7 @@ export default function SignUp() {
     const data = await res.json();
     console.log(res);
     if (res.ok) {
-      alert("Success");
+      console.log("Success");
     }
 
     router.push('/signIn')
