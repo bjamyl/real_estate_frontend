@@ -54,7 +54,7 @@ export default function Listing({ listing }) {
         <div>
           {listing && (
             <SingleListing
-              image={orig+listing.photo_main}
+              image={listing.photo_main}
               bathrooms={listing.bedrooms}
               garage={listing.garage}
               price={listing.price}

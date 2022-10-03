@@ -8,7 +8,6 @@ import React from "react";
 // ];
 
 export default function Realtors({ realtors }) {
-  const orig = "https://realestate.up.railway.app";
   return (
     <section>
       <div>
@@ -18,7 +17,7 @@ export default function Realtors({ realtors }) {
             <div className="" key={realtor.id}>
               <Image
                 className=""
-                src={orig+realtor.photo}
+                src={realtor.photo}
                 width={1080}
                 height={1920}
                 objectFit="cover"
