@@ -1,11 +1,8 @@
 import React from "react";
 import SearchBlock from "../../components/ListingsPageComponents/SearchBlock";
 import Layout from "../../components/Layout/Layout";
-import { listingsData } from "../../components/ListingsPageComponents/listingData";
 import ListingCard from "../../components/HomepageComponents/ListingCard";
-import { useState, useContext } from "react";
 import Link from "next/link";
-import SearchContext from "../../context/SearchContext";
 
 export default function Listings({ listings }) {
 
@@ -35,7 +32,7 @@ export default function Listings({ listings }) {
 }
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch("http://127.0.0.1:8000/api/listings");
+  const res = await fetch("https://realestate.up.railway.app/api/listings/");
   const listings = await res.json();
 
   // Pass data to the page via props

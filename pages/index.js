@@ -17,7 +17,7 @@ export default function Home({listings}) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch("http://127.0.0.1:8000/api/listings");
+  const res = await fetch("https://realestate.up.railway.app/api/listings/");
   const listings = await res.json();
 
   // Pass data to the page via props

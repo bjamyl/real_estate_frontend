@@ -42,7 +42,7 @@ export default function SignUp() {
     };
 
     // Submit form to backend
-    const res = await fetch("http://127.0.0.1:8000/api/register/", {
+    const res = await fetch("https://realestate.up.railway.app/api/register/", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

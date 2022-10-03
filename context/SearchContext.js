@@ -30,7 +30,7 @@ export const SearchProvider = ({ children }) => {
       price: "",
     });
     let res = await fetch(
-      `http://127.0.0.1:8000/api/listings/?search=${searchItems.replaceAll(
+      `https://realestate.up.railway.app/api/listings/?search=${searchItems.replaceAll(
         " ",
         "+"
       )}`,
@@ -60,7 +60,7 @@ export const SearchProvider = ({ children }) => {
     e.preventDefault();
     setSearchItems("");
     const res = await fetch(
-      `http://127.0.0.1:8000/api/listings/?bedrooms=${
+      `https://realestate.up.railway.app/api/listings/?bedrooms=${
         values.rooms
       }&region=${values.region.replaceAll(" ", "+")}&price=${
         values.price

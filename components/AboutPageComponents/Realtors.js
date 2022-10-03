@@ -8,7 +8,7 @@ import React from "react";
 // ];
 
 export default function Realtors({ realtors }) {
-  const orig = "http://localhost:8000";
+  const orig = "https://realestate.up.railway.app";
   return (
     <section>
       <div>
@@ -22,7 +22,7 @@ export default function Realtors({ realtors }) {
                 width={1080}
                 height={1920}
                 objectFit="cover"
-                alt=""
+                alt="realtor"
               />
               <div className="mb-4">
                 <h1 className="xl:text-2xl font-bold">{realtor.name}</h1>

@@ -27,7 +27,7 @@ export default function Listing({ listing }) {
       message,
       user_id: userId,
     };
-    const res = await fetch("http://127.0.0.1:8000/api/enquiries/send/",{
+    const res = await fetch("https://realestate.up.railway.app/api/enquiries/send/",{
       method:"POST",
       headers: {
         "Content-type": "application/json"
@@ -167,7 +167,7 @@ export default function Listing({ listing }) {
   );
 }
 export const getStaticPaths = async () => {
-  const res = await fetch("http://127.0.0.1:8000/api/listings/");
+  const res = await fetch("https://realestate.up.railway.app/api/listings/");
   const data = await res.json();
 
   const paths = data.map((listing) => {
@@ -184,7 +184,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(`http://127.0.0.1:8000/api/listings/${id}`);
+  const res = await fetch(`https://realestate.up.railway.app/api/listings/${id}`);
   const data = await res.json();
 
   return {

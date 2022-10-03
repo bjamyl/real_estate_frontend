@@ -72,7 +72,7 @@ export async function getServerSideProps(context) {
 
   console.log(tokens);
 
-  const response = await fetch("http://127.0.0.1:8000/api/enquiries/", {
+  const response = await fetch("https://realestate.up.railway.app/api/enquiries/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",

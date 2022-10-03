@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
   //Logging in user function: Takes the username and password and sends that data to the token obtain endpoint
   let loginUser = async (e) => {
     e.preventDefault();
-    let res = await fetch("http://127.0.0.1:8000/api/token/", {
+    let res = await fetch("https://realestate.up.railway.app/api/token/", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }) => {
     console.log("Update token called!!");
     console.log(authTokens);
     console.log(access);
-    let res = await fetch("http://127.0.0.1:8000/api/token/refresh/", {
+    let res = await fetch("https://realestate.up.railway.app/api/token/refresh/", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
