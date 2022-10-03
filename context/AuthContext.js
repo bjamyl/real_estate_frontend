@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }) => {
       // setAuthCookies(data);
       // localStorage.setItem("authTokens", JSON.stringify(data));
       // Setting Next cookie
-      router.back();
+      router.push('/');
     } else {
       alert("Something went wrong");
     }
