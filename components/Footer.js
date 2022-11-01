@@ -8,7 +8,7 @@ export default function Footer() {
             <div>
                 <Image src='/logo-light.png' width={60} height={31.5} alt='logo'/>
             </div>
-            <h2 className='text-white'>2022, All Rights Reserved</h2>
+            <h2 className='text-white font-bold '>2022, Built By Jamil,All Rights Reserved</h2>
         </div>
     </footer>
   )
