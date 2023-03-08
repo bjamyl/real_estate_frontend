@@ -40,6 +40,7 @@ export default function SingleListing({
               layout="responsive"
               objectFit="cover"
               alt="main-image"
+              placeholder="blur"
             />
           </div>
           <div className="xl:w-[1280px] mt-2">

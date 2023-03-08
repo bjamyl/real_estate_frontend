@@ -1,21 +1,22 @@
 import Image from "next/image";
 import Realtors from "./Realtors";
 
-export default function AboutPageComponent({realtors}) {
+export default function AboutPageComponent({ realtors }) {
   return (
     <section className="mt-28 xl:flex xl:justify-center">
       <div className="mx-4 xl:w-[1290px]">
         {/* upper section */}
-        <div className="xl:flex xl:items-end">
+        <div className="xl:flex xl:items-start">
           <h1 className="font-bold text-2xl xl:text-6xl mb-4">
             We help you search for the perfect home
           </h1>
           <p className="mb-4 xl:w-3/4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perspiciatis esse officia repudiandae ad saepe ex, amet neque quod
-            accusamus rem quia magnam magni dolorum facilis ullam minima
-            perferendis? Exercitationem at quaerat commodi id libero eveniet
-            harum perferendis laborum molestias quia.
+            We have a wide portfolio of properties across the country and in
+            major cities, ranging from luxury apartments to country homes. We
+            take pride in our ability to help you find the perfect home or
+            investment property for your needs. We understand the challenges of
+            the housing market and work hard to ensure our clients get the most
+            out of their investments.
           </p>
         </div>
         {/* middle image section */}
@@ -32,18 +33,22 @@ export default function AboutPageComponent({realtors}) {
         {/* bottom section */}
         <div className="w-auto h-1 bg-black my-8 xl:my-28"></div>
         <div className="xl:flex mt-4">
-          <h1 className="font-bold text-2xl mb-4 xl:text-6xl">Together we are strong</h1>
+          <h1 className="font-bold text-2xl mb-4 xl:text-6xl">
+            Together we are strong
+          </h1>
           <div className="xl:w-3/4">
             <p className="font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis esse officia repudiandae ad saepe ex, amet neque quod
+              Our team is committed to providing our clients with the highest
+              quality of service, from the initial consultation to the final
+              closing. We are passionate about helping our clients find their
+              dream home or investment property.
             </p>
             <p className="mt-8 mb-8 xl:mb-28">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis esse officia repudiandae ad saepe ex, amet neque quod
-              accusamus rem quia magnam magni dolorum facilis ullam minima
-              perferendis? Exercitationem at quaerat commodi id libero eveniet
-              harum perferendis laborum molestias quia.
+              We understand that buying a home or investing in real estate can
+              be a daunting task, which is why we are here to guide you every
+              step of the way. Our team of professionals is available to answer
+              any questions you may have and to provide you with all the
+              information you need to make the best decision for your family.
             </p>
           </div>
         </div>

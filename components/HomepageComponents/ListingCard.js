@@ -17,7 +17,7 @@ export default function ListingCard({ image, title, price, location }) {
         <div className="p-2">
           <h2 className="font-bold text-xl">{title}</h2>
           <div className="mt-10">
-            <p className="font-semibold">GHC {price}</p>
+            <p className="font-semibold">GHC {price}.00</p>
             <p className="text-light flex gap-1">
               {" "}
               <MdLocationOn color="#B0BAD5" size={24} />

@@ -11,10 +11,12 @@ export default function Hero() {
               Find <br /> The Perfect <br /> Home For You
             </h1>
           </div>
-          <p className="text-base font-light xl:text-xl xl:w-4/5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac
-            risus in mauris congue pharetra. Morbi tortor nulla, rutrum vitae
-            ipsum at, maximus interdum turpis.
+          <p className="text-base font-light xl:text-xl xl:w-4/5 leading-relaxed">
+            Our team of
+            experienced real estate agents will work with you to find the
+            perfect home for you and your family. Whether you are looking for a
+            new home, investment property, or are just starting out in the real
+            estate market, we will be with you every step of the way.
           </p>
           <div>
             <SearchBar placeholderText="Search a location" />

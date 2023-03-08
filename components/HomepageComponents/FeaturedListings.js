@@ -14,9 +14,7 @@ export default function FeaturedListings({ listings }) {
           transition={{ duration: 0.5 }}
           className="xl:w-2/4 text-center xl:text-lg"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac
-          risus in mauris congue pharetra. Morbi tortor nulla, rutrum vitae
-          ipsum at, maximus interdum turpis.
+          Our featured listings are hand-selected by our experienced real estate agents to give you the best options for your unique needs. 
         </motion.p>
         <Link href="/listings">
           <button className="text-white bg-[#150F0A] px-8 py-2 text-lg hover:scale-110 transition-all duration-700">
